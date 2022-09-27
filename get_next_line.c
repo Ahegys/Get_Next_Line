@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 	if (!buffer)
 		return (NULL);
 	line = extract_line(buffer);
-	buffer = container_next(buffer);
+	buffer = container_remove(buffer);
 	return (line);
 
 }
