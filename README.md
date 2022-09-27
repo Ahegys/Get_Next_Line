@@ -1,2 +1,3 @@
-# Get_next_line
-# Get_next_line
+### Get_Next_Line
+####project for 42
+> Status: Developing
