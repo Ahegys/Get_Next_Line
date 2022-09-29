@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afelipe- <afelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: afelipe- <afelipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:26:21 by afelipe-          #+#    #+#             */
-/*   Updated: 2022/09/29 19:00:56 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/29 19:51:27 by afelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,15 +96,15 @@ char	*read_container(int fd, char *res)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	buffer = read_container(fd, buffer);
-	if (!buffer)
+	buffer[fd] = read_container(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = extract_line(buffer);
-	buffer = container_remove(buffer);
+	line = extract_line(buffer[fd]);
+	buffer[fd] = container_remove(buffer[fd]);
 	return (line);
 }
