@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afelipe- <afelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/29 17:26:59 by afelipe-          #+#    #+#             */
+/*   Updated: 2022/09/29 17:27:03 by afelipe-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 5
-#endif
+#  define BUFFER_SIZE 5
+# endif
 # include <stdlib.h>
 # include <unistd.h>
 
